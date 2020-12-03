@@ -9,12 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>All Recipes</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/romain/public_html/marmiwild/src/Controller/RecipeController.php'|file_link(0) }}">src/Controller/RecipeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/romain/public_html/marmiwild/templates/recipe/index.html.twig'|file_link(0) }}">templates/recipe/index.html.twig</a></code></li>
+    {% for recipe in recipes %}
+        <li><a href="#">{{ recipe.title }}</a></li>
+    {% endfor %}
     </ul>
 </div>
 {% endblock %}
