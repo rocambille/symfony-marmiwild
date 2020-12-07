@@ -11,6 +11,17 @@
 <div class="example-wrapper">
     <h1>Hello {{ recipe.title }}</h1>
     <p>{{ recipe.description }}</p>
+    <ul>
+    {% for comment in recipe.comments %}
+        <li>{{ comment.content }}</li>
+    {% else %}
+        <li>no comments</li>
+    {% endfor %}
+    </ul>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>{{ button_label | default('Save') }}</button>
+    {{ form_end(form) }}
     <a href="{{ path('home') }}">Back to home</a>
 </div>
 {% endblock %}
