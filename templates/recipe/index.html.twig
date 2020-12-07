@@ -16,5 +16,10 @@
         <li><a href="{{ path('recipe_show', {id: recipe.id}) }}">{{ recipe.title }}</a></li>
     {% endfor %}
     </ul>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>{{ button_label | default('Save') }}</button>
+    {{ form_end(form) }}
 </div>
 {% endblock %}
