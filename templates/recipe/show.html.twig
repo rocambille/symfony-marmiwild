@@ -18,6 +18,10 @@
         <li>no comments</li>
     {% endfor %}
     </ul>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>{{ button_label | default('Save') }}</button>
+    {{ form_end(form) }}
     <a href="{{ path('home') }}">Back to home</a>
 </div>
 {% endblock %}
